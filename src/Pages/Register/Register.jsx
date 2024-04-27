@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom";
+
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
@@ -22,7 +24,7 @@ const Register = () => {
 
     return (
         <section className="h-screen bg-[#FFF2E2]">
-            <ToastContainer />
+            <ToastContainer/>
             <div className="container h-full px-6 py-24">
                 <div
                     className="flex h-full flex-wrap items-center justify-center lg:justify-between">

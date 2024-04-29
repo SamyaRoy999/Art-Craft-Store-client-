@@ -1,11 +1,13 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
-
+    const { emailBaseLogin, updateUserProfile } = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -14,17 +16,28 @@ const Register = () => {
 
     const onSubmit = (data) => {
         const { email, password, photoUrl, name } = data
-       
+
         if (!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
             toast.error('Password must have at least 6 characters, including uppercase and lowercase letters.')
             return;
         }
+
         console.log(email, password, photoUrl, name);
+
+        emailBaseLogin(email, password)
+            .then(result => {
+                console.log(result.user);
+                updateUserProfile(name , photoUrl)
+            })
+
+        // user profileUpdate
+       
+
     }
 
     return (
         <section className="h-screen bg-[#FFF2E2]">
-            <ToastContainer/>
+            <ToastContainer />
             <div className="container h-full px-6 py-24">
                 <div
                     className="flex h-full flex-wrap items-center justify-center lg:justify-between">
@@ -100,7 +113,7 @@ const Register = () => {
                                 Sign in
                             </button>
 
-                            
+
                         </form>
                         <p>Do not have an account   <Link to='/login' className=" text-[#E65B56]">Login</Link></p>
                     </div>
@@ -108,7 +121,7 @@ const Register = () => {
             </div>
         </section>
     )
-    
+
 }
 
 export default Register

@@ -1,16 +1,21 @@
-import { NavLink } from "react-router-dom"
+import { useContext } from "react"
+import { Link, NavLink } from "react-router-dom"
+import { AuthContext } from "../../AuthProvider/AuthProvider"
 
 
 const Navbar = () => {
+  const { user, userSignOut } = useContext(AuthContext);
+
+
   const NabvarItem = <>
     <li><NavLink to='/'>Home</NavLink></li>
-    <li> <NavLink to='/register'>register</NavLink></li>
-    <li><NavLink to='/login'>login</NavLink></li>
+    {user && (
+      <li><NavLink to='/addCraft'>AddCraft</NavLink></li>
+    )}
+
   </>
   return (
     <div >
-
-
       <div className="navbar bg-base-100 z-30">
         <div className="navbar-start">
           <div className="dropdown">
@@ -21,7 +26,12 @@ const Navbar = () => {
               {NabvarItem}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <div className=" flex items-center gap-2">
+            <div className=" w-12">
+              <img src="https://i.ibb.co/hLhtdsV/nq31-07fy-230113.jpg" alt="" />
+            </div>
+            <a className=" font-bold text-3xl">Artful<span className="text-[#E65B56]">Nook</span></a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -29,21 +39,39 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="dropdown dropdown-hover">
-            <div tabIndex={0}  className=" ml-10">
-              {/* avatar */}
-              <div className="avatar">
-                <div className="w-14 rounded-full">
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          {
+            user ? <div className="dropdown dropdown-hover">
+              <div tabIndex={0} className=" ml-10">
+                {/* avatar */}
+                <div className="avatar">
+                  <div className="w-14 rounded-full">
+                    <img src={user.photoURL} />
+                  </div>
                 </div>
               </div>
+              {/* dropdrown */}
+              <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a>{user.displayName}</a></li>
+                <li><button onClick={() => userSignOut()}>LogOut</button></li>
+              </ul>
+            </div> : <div className="flex gap-5">
+              <Link to='/login' className="relative px-5 py-2 font-medium text-white group">
+                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-[#ec807c] group-hover:bg-[#E65B56] group-hover:skew-x-12"></span>
+                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-[#E65B56] group-hover:bg-[#ec807c] group-hover:-skew-x-12"></span>
+                <span className="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-[#e86965] -rotate-12"></span>
+                <span className="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-[#ec807c] -rotate-12"></span>
+                <span className="relative">Login</span>
+              </Link>
+              <Link to='/register' className="relative px-5 py-2 font-medium text-white group">
+                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-[#ec807c] group-hover:bg-[#E65B56] group-hover:skew-x-12"></span>
+                <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-[#E65B56] group-hover:bg-[#ec807c] group-hover:-skew-x-12"></span>
+                <span className="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-[#e86965] -rotate-12"></span>
+                <span className="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-[#e58d8a] -rotate-12"></span>
+                <span className="relative">Register</span>
+              </Link>
             </div>
-            {/* dropdrown */}
-            <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Item 1</a></li>
-              <li><a>Item 2</a></li>
-            </ul>
-          </div>
+
+          }
         </div>
       </div>
     </div>

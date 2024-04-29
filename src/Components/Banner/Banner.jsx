@@ -7,8 +7,6 @@ import { Navigation } from 'swiper/modules';
 
 const Banner = () => {
 
-
-
     return (
         <>
             <Swiper
@@ -27,7 +25,7 @@ const Banner = () => {
                             <button className='btn bg-[#E65B56] text-white hover:text-[#E65B56]'>SHOP NOW</button>
                         </div>
                         <div className=' flex items-center mt-10'>
-                            <div className='relative'>
+                            <div className='relative bg-[#ec807c]'>
                                 <div className='  w-80 pb-7'>
                                     <img src='https://i.ibb.co/VYGTYLk/2151357854.jpg' alt="" />
                                 </div>

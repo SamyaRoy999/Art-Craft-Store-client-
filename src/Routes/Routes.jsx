@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddCraft from "../Pages/AddCraft/AddCraft";
 import App from "../App";
+import MyArtCraft from "../Pages/MyArtCraft/MyArtCraft";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
         {
           path: '/addCraft',
           element: <AddCraft/>
+        },
+        {
+          path: '/myArtCraft',
+          element: <MyArtCraft/>
         },
       ]
     },

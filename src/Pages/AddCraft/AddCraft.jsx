@@ -1,10 +1,16 @@
 import { IoBagAdd } from "react-icons/io5";
 import { useForm } from "react-hook-form"
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 
 
 
 const AddCraft = () => {
-
+    const {user} =  useContext(AuthContext);
+   
+    const authEmail = user?.email
+    console.log(authEmail);
     const {
         register,
         handleSubmit,
@@ -38,7 +44,8 @@ const AddCraft = () => {
             stockStatus,
             subcategoryName,
             UserName,
-            UserEmail
+            UserEmail,
+            authEmail
         }
 
         console.log(info);

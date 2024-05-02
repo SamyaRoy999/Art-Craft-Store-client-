@@ -15,7 +15,9 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState()
+    const [name, setName] = useState(null)
+    const [photoURl, setPhotoURl] = useState(null)
     // Gooogle login 
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider)
@@ -30,7 +32,7 @@ const AuthProvider = ({ children }) => {
     const emailBaseLogin = (email, password) => {
 
         return createUserWithEmailAndPassword(auth, email, password)
-    
+
     }
     // sign in user 
 
@@ -41,12 +43,11 @@ const AuthProvider = ({ children }) => {
     }
 
     //Update user
-    const updateUserProfile = (name, image) => {
+    const userUpdateProfile = (name, photoURL) => {
         return updateProfile(auth.currentUser, {
-            displayName: name, photoURL: image
+            displayName: name, photoURL: photoURL
         })
     }
-
     // user find
     useEffect(() => {
         const unSuvscrive = onAuthStateChanged(auth, (user) => {
@@ -55,7 +56,8 @@ const AuthProvider = ({ children }) => {
             }
         }); return () => unSuvscrive()
     }, [])
-    console.log(user);
+  
+
 
     // sign out 
     const userSignOut = () => {
@@ -70,8 +72,15 @@ const AuthProvider = ({ children }) => {
         emailBaseLogin,
         signInUser,
         userSignOut,
-        updateUserProfile
+        userUpdateProfile,
+        setName,
+        setPhotoURl,
+        name,
+        photoURl,
+        
+
     }
+    // console.log(user.displayName);
     return (
         <AuthContext.Provider value={allvalue}>
             {children}

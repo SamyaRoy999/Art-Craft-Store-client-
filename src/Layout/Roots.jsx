@@ -5,7 +5,7 @@ import Footer from "../Components/Footer/Footer"
 
 const Roots = () => {
     return (
-        <div >
+        <div className=" font-Shanti">
             <Navbar/>
             <Outlet/>
             <Footer/>

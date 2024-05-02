@@ -5,8 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        EB_Garamond: ['EB Garamond', 'serif'],
+        Shanti: ['Shanti', 'sans-serif'],
+      },
+    },
   },
+  
   plugins: [require("daisyui")],
 }
 

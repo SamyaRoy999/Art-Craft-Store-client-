@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddCraft from "../Pages/AddCraft/AddCraft";
+import App from "../App";
 
 export const router = createBrowserRouter([
     {
@@ -15,16 +16,20 @@ export const router = createBrowserRouter([
           element: <Home/>
         },
         {
-          path: '/addCraft',
-          element: <AddCraft/>
-        },
-        {
           path: '/login',
           element: <Login/>
         },
         {
           path: '/register',
           element: <Register/>
+        },
+        {
+          path: '/app',
+          element: <App/>
+        },
+        {
+          path: '/addCraft',
+          element: <AddCraft/>
         },
       ]
     },

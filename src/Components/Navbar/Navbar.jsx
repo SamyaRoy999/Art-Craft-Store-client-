@@ -4,11 +4,12 @@ import { AuthContext } from "../../AuthProvider/AuthProvider"
 
 
 const Navbar = () => {
-  const { user, userSignOut } = useContext(AuthContext);
+  const { user, userSignOut, name, photoURl } = useContext(AuthContext);
 
 
   const NabvarItem = <>
     <li><NavLink to='/'>Home</NavLink></li>
+    <li><NavLink to='/app'>App</NavLink></li>
     {user && (
       <li><NavLink to='/addCraft'>AddCraft</NavLink></li>
     )}
@@ -45,13 +46,13 @@ const Navbar = () => {
                 {/* avatar */}
                 <div className="avatar">
                   <div className="w-14 rounded-full">
-                    <img src={user.photoURL} />
+                    <img src={user.photoURL || photoURl} />
                   </div>
                 </div>
               </div>
               {/* dropdrown */}
               <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a>{user.displayName}</a></li>
+                <li><a>{user.displayName || name}</a></li>
                 <li><button onClick={() => userSignOut()}>LogOut</button></li>
               </ul>
             </div> : <div className="flex gap-5">

@@ -6,11 +6,13 @@ import Register from "../Pages/Register/Register";
 import AddCraft from "../Pages/AddCraft/AddCraft";
 import App from "../App";
 import MyArtCraft from "../Pages/MyArtCraft/MyArtCraft";
+import Error from "../Pages/Error/Error";
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Roots/>,
+      errorElement: <Error/>,
       children: [
         {
           path: '/',

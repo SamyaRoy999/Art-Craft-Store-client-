@@ -2,7 +2,7 @@ import { IoBagAdd } from "react-icons/io5";
 import { useForm } from "react-hook-form"
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import Swal from 'sweetalert2'
 
 
 
@@ -29,8 +29,9 @@ const AddCraft = () => {
             price,
             processingTime,
             rating,
+            shortDescription,
             stockStatus,
-            subcategoryName
+            subcategoryName,
         } = data;
 
         const info = {
@@ -42,6 +43,7 @@ const AddCraft = () => {
             processingTime,
             rating,
             stockStatus,
+            shortDescription,
             subcategoryName,
             UserName,
             UserEmail,
@@ -58,9 +60,14 @@ const AddCraft = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                
                     if (data.acknowledged === true) {
-                        alert("user added");
+                        Swal.fire({
+                            title: 'Craft item added successfully!',
+                            text: 'Do you want to continue',
+                            icon: 'success',
+                            confirmButtonText: 'Cool'
+                          })
                         reset()
                         
                     }

@@ -7,6 +7,8 @@ import AddCraft from "../Pages/AddCraft/AddCraft";
 import App from "../App";
 import MyArtCraft from "../Pages/MyArtCraft/MyArtCraft";
 import Error from "../Pages/Error/Error";
+import ArtsSingle from "../Pages/ArtsSingle/ArtsSingle";
+import AllArtsCraft from "../Pages/AllArtsCraft/AllArtsCraft";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +39,14 @@ export const router = createBrowserRouter([
         {
           path: '/myArtCraft',
           element: <MyArtCraft/>
+        },
+        {
+          path: '/artsSingle/:id',
+          element: <ArtsSingle/>
+        },
+        {
+          path: 'AllArtsCraft',
+          element: <AllArtsCraft/>
         },
       ]
     },

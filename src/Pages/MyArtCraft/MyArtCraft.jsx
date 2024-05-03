@@ -43,10 +43,12 @@ const MyArtCraft = () => {
                   <img className="w-full h-60 rounded-lg object-cover object-center" src={item.imageURL} alt="product" />
                 </div>
                 <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.name}</p>
+                <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.shortDescription}</p>
                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Price : {item.price}</p>
                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Rating : {item.rating}</p>
                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Customization : {item.customization}</p>
-                <p className="mb-6 ml-4 text-lg font-normal text-gray-800">stockStatus : {item.stockStatus}</p>
+                <p className="mb-2 ml-4 text-lg font-normal text-gray-800">ProcessingTime : {item.processingTime}</p>
+                <p className="mb-6 ml-4 text-lg font-normal text-gray-800">StockStatus : {item.stockStatus}</p>
                 <div className="flex justify-between items-center">
                   <button type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">“Update</button>
                   <button type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>

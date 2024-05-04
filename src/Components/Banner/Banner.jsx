@@ -17,7 +17,7 @@ const Banner = () => {
             >
 
                 <SwiperSlide >
-                    <div className='  flex justify-between items-center mx-auto container'>
+                    <div className='  flex justify-between flex-wrap-reverse items-center mx-auto container'>
 
                         <div className=''>
                             <h1 className='text-[42px] mb-5 font-EB_Garamond font-medium'> Explore Majestic Landscapes</h1>
@@ -46,7 +46,7 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <div className='  flex justify-between items-center mx-auto container'>
+                    <div className='  flex justify-between flex-wrap-reverse items-center mx-auto container'>
 
                         <div className=''>
                             <h1 className='text-[42px] mb-5 font-EB_Garamond font-medium'>Creative Corner Emporium</h1>
@@ -75,7 +75,7 @@ const Banner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide >
-                    <div className='  flex justify-between items-center mx-auto container'>
+                    <div className='  flex justify-between flex-wrap-reverse items-center mx-auto container'>
 
                         <div className=''>
                             <h1 className='text-[42px] mb-5 font-EB_Garamond font-medium'> Gallery of Inspiration</h1>

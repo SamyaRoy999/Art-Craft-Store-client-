@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState, } from "react"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 import Swal from "sweetalert2"
+import { Link } from "react-router-dom"
 
 
 const MyArtCraft = () => {
@@ -8,17 +9,19 @@ const MyArtCraft = () => {
   const { user } = useContext(AuthContext)
   const [myArt, setMyArt] = useState([])
   const [customizArts, setCustomizArts] = useState(myArt)
-  
+
+
   useEffect(() => {
-    
+
     fetch(`http://localhost:5000/addArts/${user.email}`)
-    .then(res => res.json())
-    .then(data => {
-      setMyArt(data);
-    })
-    
+      .then(res => res.json())
+      .then(data => {
+        setCustomizArts(data)
+        setMyArt(data);
+      })
+
   }, [user])
-  
+
   console.log(customizArts);
   const sorting = (e) => {
     const customization = e.target.value
@@ -26,8 +29,8 @@ const MyArtCraft = () => {
     setCustomizArts(customiz);
   }
 
-  const hendelDelete = id =>{
-    
+  const hendelDelete = id => {
+
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -38,12 +41,22 @@ const MyArtCraft = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Deleted!",
-          text: {id},
-          icon: "success"
-        });
-        
+
+        fetch(`http://localhost:5000/addArts/${id}`, {
+          method: "DELETE"
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.deleteCount > 0) {
+              Swal.fire(
+                "Deleted!",
+                "Delete your Arts",
+                "success"
+              );
+              const remining = customizArts.filter(del => del._id !== id)
+              setCustomizArts(remining)
+            }
+          })
       }
     });
   }
@@ -57,7 +70,7 @@ const MyArtCraft = () => {
         </select>
       </form>
       <div className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3">
-        { customizArts.map(item => (
+        {customizArts.map(item => (
           <div key={item._id} className=" ">
             <div className="mx-auto w-80 mb-5">
               <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
@@ -72,8 +85,10 @@ const MyArtCraft = () => {
                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800">ProcessingTime : {item.processingTime}</p>
                 <p className="mb-6 ml-4 text-lg font-normal text-gray-800">StockStatus : {item.stockStatus}</p>
                 <div className="flex justify-between items-center">
-                  <button type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Update</button>
-                  <button onClick={()=>hendelDelete(item._id)} type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>
+                  <Link to={`/updateArts/${item._id}`}>
+                    <button type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Update</button>
+                  </Link>
+                  <button onClick={() => hendelDelete(item._id)} type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>
                 </div>
               </div>
             </div>

@@ -9,45 +9,51 @@ import MyArtCraft from "../Pages/MyArtCraft/MyArtCraft";
 import Error from "../Pages/Error/Error";
 import ArtsSingle from "../Pages/ArtsSingle/ArtsSingle";
 import AllArtsCraft from "../Pages/AllArtsCraft/AllArtsCraft";
+import UpdateArts from "../Pages/UpdateArts/UpdateArts";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Roots/>,
-      errorElement: <Error/>,
-      children: [
-        {
-          path: '/',
-          element: <Home/>
-        },
-        {
-          path: '/login',
-          element: <Login/>
-        },
-        {
-          path: '/register',
-          element: <Register/>
-        },
-        {
-          path: '/app',
-          element: <App/>
-        },
-        {
-          path: '/addCraft',
-          element: <AddCraft/>
-        },
-        {
-          path: '/myArtCraft',
-          element: <MyArtCraft/>
-        },
-        {
-          path: '/artsSingle/:id',
-          element: <ArtsSingle/>
-        },
-        {
-          path: 'AllArtsCraft',
-          element: <AllArtsCraft/>
-        },
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Roots />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
+      },
+      {
+        path: '/app',
+        element: <App />
+      },
+      {
+        path: '/addCraft',
+        element: <AddCraft />
+      },
+      {
+        path: '/myArtCraft',
+        element: <MyArtCraft />
+      },
+      {
+        path: '/artsSingle/:id',
+        element: <ArtsSingle />
+      },
+      {
+        path: '/AllArtsCraft',
+        element: <AllArtsCraft />
+      },
+      {
+        path: '/updateArts/:id',
+        element: <UpdateArts />,
+        loader: ({ params }) => fetch(`http://localhost:5000/addArts/singel/${params.id}`)
+      },
+    ]
+  },
+]);

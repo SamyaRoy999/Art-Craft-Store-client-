@@ -57,8 +57,8 @@ const AuthProvider = ({ children }) => {
         const unSuvscrive = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
-                setLoding(false)
             }
+            setLoding(false)
         }); return () => unSuvscrive()
     }, [])
   

@@ -4,12 +4,12 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddCraft from "../Pages/AddCraft/AddCraft";
-import App from "../App";
 import MyArtCraft from "../Pages/MyArtCraft/MyArtCraft";
 import Error from "../Pages/Error/Error";
 import ArtsSingle from "../Pages/ArtsSingle/ArtsSingle";
 import AllArtsCraft from "../Pages/AllArtsCraft/AllArtsCraft";
 import UpdateArts from "../Pages/UpdateArts/UpdateArts";
+import PrivetedRoute from "../Priveted/PrivetedRoute";
 
 export const router = createBrowserRouter([
   {
@@ -30,20 +30,16 @@ export const router = createBrowserRouter([
         element: <Register />
       },
       {
-        path: '/app',
-        element: <App />
-      },
-      {
         path: '/addCraft',
-        element: <AddCraft />
+        element: <PrivetedRoute><AddCraft /></PrivetedRoute> 
       },
       {
         path: '/myArtCraft',
-        element: <MyArtCraft />
+        element:<PrivetedRoute> <MyArtCraft /></PrivetedRoute>
       },
       {
         path: '/artsSingle/:id',
-        element: <ArtsSingle />
+        element:<PrivetedRoute><ArtsSingle /></PrivetedRoute> 
       },
       {
         path: '/AllArtsCraft',

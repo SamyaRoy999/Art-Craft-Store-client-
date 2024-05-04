@@ -78,7 +78,7 @@ const MyArtCraft = () => {
                   <img className="w-full h-60 rounded-lg object-cover object-center" src={item.imageURL} alt="product" />
                 </div>
                 <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.name}</p>
-                <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.shortDescription}</p>
+                <p className="mb-2 ml-4 text-lg font-bold text-gray-800 "> {item.shortDescription}</p>
                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Price : {item.price}</p>
                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Rating : {item.rating}</p>
                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Customization : {item.customization}</p>

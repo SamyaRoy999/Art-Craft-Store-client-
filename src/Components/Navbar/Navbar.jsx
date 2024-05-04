@@ -10,11 +10,11 @@ const Navbar = () => {
   const NabvarItem = <>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/AllArtsCraft'>AllArtsCraft</NavLink></li>
-    {user && (<>
-      <li><NavLink to='/addCraft'>AddCraft</NavLink></li>
-      <li><NavLink to='/myArtCraft'>MyArtCraft</NavLink></li>
+    <li><NavLink to='/addCraft'>AddCraft</NavLink></li>
+    <li><NavLink to='/myArtCraft'>MyArtCraft</NavLink></li>
+    {/* {user && (<>
     </>
-    )}
+    )} */}
   </>
   return (
     <div >

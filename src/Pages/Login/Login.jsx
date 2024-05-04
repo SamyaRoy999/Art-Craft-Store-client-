@@ -1,15 +1,20 @@
 import { FaGithub } from "react-icons/fa";
 import { IoLogoGoogle } from "react-icons/io";
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 
 
 
 const Login = () => {
     const { googleLogin, githubLogin, signInUser } = useContext(AuthContext)
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state || "/"
 
     const {
       register,
@@ -24,19 +29,31 @@ const Login = () => {
       console.log(email, password);
   
       signInUser(email, password)
-        .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          console.log(user);
-          // ...
-        })
+      .then((user) => {
+
+        if (user.user) {
+            toast.success('Login Successful!')
+            setTimeout(() => {
+                navigate(from)
+            }, 2000);
+        }
+
+    })
+    .catch(() => {
+        toast.error('The email and password do not match our records. Please try again.')
+    });
     }
   
     const hendelSocial = (socialLogin) => {
       socialLogin()
-        .then(result => {
-          console.log(result.user);
-        })
+      .then(result => {
+        if (result.user) {
+            toast.success('Login Successful!')
+            setTimeout(() => {
+                navigate(from)
+            }, 2000);
+        }
+    })
     }
   
 
@@ -44,6 +61,7 @@ const Login = () => {
         <>
 
             <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url('https://i.ibb.co/tXWZZ4k/painting-woman-s-portrait.jpg')]">
+            <ToastContainer />
                 <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
                     <div className="text-white">
                         <div className="mb-8 flex flex-col items-center">

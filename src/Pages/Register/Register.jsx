@@ -1,7 +1,7 @@
 
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
@@ -14,7 +14,9 @@ const Register = () => {
     const { emailBaseLogin, userUpdateProfile, setName, setPhotoURl} = useContext(AuthContext)
 
     const [passwordIcon, setPasswordIcon] = useState(false)
-  
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state || "/"
     const {
       register,
       handleSubmit,
@@ -33,10 +35,23 @@ const Register = () => {
       console.log(email, password, photoUrl, name);
   
       emailBaseLogin(email, password)
-        .then(result => {
-          console.log(result.user);
-          userUpdateProfile(name , photoUrl)
+        .then((userCredential) => {
+          console.log(userCredential.user)
+          userUpdateProfile(name , photoUrl).then(() => {
+            if (userCredential.user) {
+                toast.success("Registration Successful!")
+                setTimeout(() => {
+                    navigate(from)
+                }, 2000);
+            }
         })
+    })
+    .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        toast.error("User is Alrady Exgist")
+    });
+       
   
       // user profileUpdate
 

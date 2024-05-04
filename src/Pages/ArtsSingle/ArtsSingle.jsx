@@ -27,7 +27,7 @@ const ArtsSingle = () => {
                             <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-400" src={item.imageURL} />
                             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                                 <h2 className="text-sm title-font text-gray-500 tracking-widest">{item.subcategoryName}</h2>
-                                <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{item.name}</h1>
+                                <h1 className=" text-3xl title-font font-medium mb-1 text-[#E65B56] py-5">{item.name}</h1>
                                 <div className="flex mb-4">
                                     <span className="flex items-center">
                                         <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
@@ -65,12 +65,12 @@ const ArtsSingle = () => {
                                         </a>
                                     </span>
                                 </div>
-                                <p className="leading-relaxed">{item.shortDescription}</p>
+                                <p className="leading-relaxed pb-5">{item.shortDescription}</p>
 
-                                <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.shortDescription}</p>
-                                <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Customization : {item.customization}</p>
-                                <p className="mb-2 ml-4 text-lg font-normal text-gray-800">ProcessingTime : {item.processingTime}</p>  
-                                <p className="mb-6 ml-4 text-lg font-normal text-gray-800">StockStatus : {item.stockStatus}</p>
+                                {/* <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.shortDescription}</p> */}
+                                <p className="mb-2 ml-4 text-lg font-normal text-gray-800"> <span className=" text-xl font-bold">Customization </span>: {item.customization}</p>
+                                <p className="mb-2 ml-4 text-lg font-normal text-gray-800"><span className=" text-xl font-bold">ProcessingTime</span> : {item.processingTime}</p>  
+                                <p className="mb-6 ml-4 text-lg font-normal text-gray-800 pb-5"><span className=" text-xl font-bold">StockStatus</span> : {item.stockStatus}</p>
 
                                 <div className="flex">
                                     <span className="title-font font-medium text-2xl text-gray-900">{item.price}</span>

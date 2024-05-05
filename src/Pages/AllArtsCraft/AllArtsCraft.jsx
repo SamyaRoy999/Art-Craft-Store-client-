@@ -4,17 +4,7 @@ import { Link } from "react-router-dom";
 
 const AllArtsCraft = () => {
     const [arts, setArts] = useState([])
-    // customization,
-    // imageURL,
-    // name,
-    // price,
-    // processingTime,
-    // rating,
-    // stockStatus,
-    // subcategoryName,
-    // UserName,
-    // UserEmail,
-    // authEmail
+
     useEffect(() => {
 
         fetch('http://localhost:5000/addArts')
@@ -32,7 +22,7 @@ const AllArtsCraft = () => {
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>StockStatus</th>
+                            <th>StockStatus & Description</th>
                             <th>Price</th>
                             <th>ProcessingTime</th>
                             <th></th>

@@ -4,9 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { useTypewriter } from 'react-simple-typewriter'
 
 const Banner = () => {
-
+    const [text] = useTypewriter({
+        words: ['Explore Majestic Landscapes','Creative Corner Emporium',' Gallery of Inspiration'],
+        loop: 0
+      })
     return (
         <>
             <Swiper
@@ -19,7 +23,7 @@ const Banner = () => {
                 <SwiperSlide className=' w-full'>
                     <div className=' flex  lg:flex-row justify-center flex-col-reverse  lg:justify-between   items-center mx-auto container'>
                         <div className=' container  ml-16  lg:ml-0'>
-                            <h1 className=' text-3xl  mt-20 lg:text-[42px] text-[#E65B56] mb-5 font-EB_Garamond font-medium'>Explore Majestic Landscapes</h1>
+                            <h1 className=' text-3xl  mt-20 lg:text-[42px] text-[#E65B56] mb-5 font-EB_Garamond font-medium'><samp className=' font-extralight text-xs'>.</samp>{text}</h1>
                             <p className=' font-normal mb-5 lg:mb-12'> Immerse yourself in nature s beauty with serene <br /> mountain vistas and enchanting forest scenes.</p>
                             <a className="relative px-5 py-2 font-medium text-white group">
                                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-[#ec807c] group-hover:bg-[#E65B56] group-hover:skew-x-12"></span>
@@ -50,7 +54,7 @@ const Banner = () => {
                 <SwiperSlide >
                     <div className=' flex  lg:flex-row justify-center flex-col-reverse  lg:justify-between   items-center mx-auto container'>
                         <div className=' container  ml-16  lg:ml-0'>
-                            <h1 className=' text-3xl  mt-20 lg:text-[42px] text-[#E65B56] mb-5 font-EB_Garamond font-medium'>Creative Corner Emporium</h1>
+                            <h1 className=' text-3xl  mt-20 lg:text-[42px] text-[#E65B56] mb-5 font-EB_Garamond font-medium'><samp className=' font-extralight text-xs'>.</samp>{text}</h1>
                             <p className=' font-normal mb-5 lg:mb-12'>Explore our eclectic collection of art supplies and unique <br /> creations, perfect for unleashing your imagination.</p>
                             <a className="relative px-5 py-2 font-medium text-white group">
                                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-[#ec807c] group-hover:bg-[#E65B56] group-hover:skew-x-12"></span>
@@ -80,7 +84,7 @@ const Banner = () => {
                 <SwiperSlide >
                     <div className=' flex  lg:flex-row justify-center flex-col-reverse  lg:justify-between   items-center mx-auto container'>
                         <div className=' container  ml-16  lg:ml-0'>
-                            <h1 className=' text-3xl  mt-20 lg:text-[42px] text-[#E65B56] mb-5 font-EB_Garamond font-medium'> Gallery of Inspiration</h1>
+                            <h1 className=' text-3xl  mt-20 lg:text-[42px] text-[#E65B56] mb-5 font-EB_Garamond font-medium'><samp className=' font-extralight text-xs'>.</samp>{text}</h1>
                             <p className=' font-normal mb-5 lg:mb-12'>Step into a world of creativity and inspiration with our<br /> curated selection  of artworks and artisanal goods.</p>
                             <a className="relative px-5 py-2 font-medium text-white group">
                                 <span className="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-[#ec807c] group-hover:bg-[#E65B56] group-hover:skew-x-12"></span>

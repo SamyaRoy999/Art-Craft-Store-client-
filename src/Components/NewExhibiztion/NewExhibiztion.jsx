@@ -2,7 +2,7 @@
 
 const NewExhibiztion = () => {
     return (
-        <div className=" mx-auto mb-16 container gap-5 flex-wrap flex flex-1 items-center justify-between">
+        <div className=" mx-auto mb-5 mt-5  lg:mb-16 lg:mt-16 container gap-5 flex-wrap flex flex-1 items-center justify-between">
             <div className="grid grid-cols-3 gap-4 mx-5 lg:mx-0">
                 <div className=" ">
                     <img className="  w-32  lg:w-40 h-72" src="https://i.ibb.co/mCdJQgC/india-republic-day-celebration-digital-art-with-woman-portrait.jpg" alt="" />

@@ -4,13 +4,23 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-
+import { useTypewriter } from 'react-simple-typewriter'
 const Ratting = () => {
+
+  const [text] = useTypewriter({
+    words: ['CEO, ','Artistic Haven'],
+    loop: 0
+  })
+  const [text2] = useTypewriter({
+    words: ['Marketing Manager', 'Canvas Crafters'],
+    loop: 0
+  })
+  const [text3] = useTypewriter({
+    words: ['Customer Support,','Creative Palette'],
+    loop: 0
+  })
+
   return (
-
-
-
-
     <Swiper
       rewind={true}
       navigation={true}
@@ -41,7 +51,7 @@ const Ratting = () => {
                   <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" className="fill-gray-900">
                     <circle cx="1" cy="1" r="1"></circle>
                   </svg>
-                  <div className="text-gray-600">CEO, Artistic Haven </div>
+                  <div className="text-gray-600">{text} </div>
                 </div>
                 <div className="rating text-center flex justify-center pt-4">
                   <input type="radio" name="rating-1" className="mask mask-star" />
@@ -79,7 +89,7 @@ const Ratting = () => {
                   <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" className="fill-gray-900">
                     <circle cx="1" cy="1" r="1"></circle>
                   </svg>
-                  <div className="text-gray-600">Marketing Manager, Canvas Crafters</div>
+                  <div className="text-gray-600">{text2}</div>
                 </div>
                 <div className="rating text-center flex justify-center pt-4">
                   <input type="radio" name="rating-1" className="mask mask-star" />
@@ -117,7 +127,7 @@ const Ratting = () => {
                   <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" className="fill-gray-900">
                     <circle cx="1" cy="1" r="1"></circle>
                   </svg>
-                  <div className="text-gray-600">Customer Support, Creative Palette</div>
+                  <div className="text-gray-600">{text3}</div>
                 </div>
                 <div className="rating text-center flex justify-center pt-4">
                   <input type="radio" name="rating-1" className="mask mask-star" />

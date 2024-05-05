@@ -76,16 +76,16 @@ const AddCraft = () => {
 
     return (
 
-        <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url('https://i.ibb.co/mCdJQgC/india-republic-day-celebration-digital-art-with-woman-portrait.jpg')]" >
-            <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
-                <div className="text-white">
+        <div className="flex  w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat bg-[url('https://i.ibb.co/mCdJQgC/india-republic-day-celebration-digital-art-with-woman-portrait.jpg')]" >
+            <div className="rounded-xl my-10 bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+                <div className="text-white ">
                     <div className="mb-8 flex flex-col items-center">
                         <IoBagAdd className=" text-6xl" />
                         <h1 className="mb-2 text-2xl"> Add Craft Item </h1>
                         <span className="text-gray-300">Enter Login Details</span>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex flex-col lg:flex-row gap-4">
                             <input  {...register("name", { required: true })} className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="name" placeholder="item_name" required />
 
                             <select className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus" placeholder="subcategory_name"  {...register("subcategoryName", { required: true })} required>
@@ -98,7 +98,7 @@ const AddCraft = () => {
                                 <option value="CartoonDrawing">Cartoon Drawing</option>
                             </select>
                         </div>
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex flex-col lg:flex-row gap-4">
                             <select className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus"  {...register("stockStatus", { required: true })} required>
                                 <option value="" disabled selected hidden>stockStatus</option>
                                 <option value="In stock">In stock</option>
@@ -111,16 +111,16 @@ const AddCraft = () => {
                                 <option value="no">No</option>
                             </select>
                         </div>
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex gap-4 flex-col lg:flex-row">
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="processingTime" placeholder="processing_time"  {...register("processingTime", { required: true })} required />
                             <input className="rounded-3xl  border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="imageURL" placeholder="image_URL"  {...register("imageURL", { required: true })} required />
                         </div>
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex gap-4 flex-col lg:flex-row">
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="price" placeholder="price" {...register("price", { required: true })} required />
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="rating" placeholder="rating" {...register("rating", { required: true })} required />
                         </div>
 
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex gap-4 flex-col lg:flex-row">
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="UserName" placeholder="User Name"   {...register("UserName", { required: true })} required />
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="email" name="UserEmail" placeholder="User Email"  {...register("UserEmail", { required: true })} required />
                         </div>

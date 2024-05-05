@@ -24,3 +24,4 @@ export default PrivetedRoute
 PrivetedRoute.propTypes = {
     children: PropTypes.any
 };
+

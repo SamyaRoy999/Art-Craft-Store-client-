@@ -4,3 +4,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active{
+    background-color: brown;
+    background-image: url('https://i.ibb.co/YRsFjmC/Pngo.png');
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+}

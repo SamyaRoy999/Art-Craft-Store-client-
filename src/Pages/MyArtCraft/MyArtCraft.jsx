@@ -47,7 +47,8 @@ const MyArtCraft = () => {
         })
           .then(res => res.json())
           .then(data => {
-            if (data.deleteCount > 0) {
+            console.log(data);
+            if (data.deletedCount > 0) {
               Swal.fire(
                 "Deleted!",
                 "Delete your Arts",
@@ -56,7 +57,9 @@ const MyArtCraft = () => {
               const remining = customizArts.filter(del => del._id !== id)
               setCustomizArts(remining)
             }
+
           })
+
       }
     });
   }

@@ -22,8 +22,9 @@ const CraftSection = () => {
                 <h3 className=" text-4xl lg:text-[50px] text-[#E65B56] mb-5 font-EB_Garamond font-medium">Artisanal Treasures Await</h3>
                 <p className="font-normal text-sm lg:text-base mb-10 font-Shanti " >Discover handcrafted wonders in our curated collection. From vibrant watercolors <br /> to intricate sculptures, explore artistry in every form.</p>
             </div>
+           
             <div className=" grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 ">
-                {arts.slice(0,6).map(item => (
+                {arts.slice(0, 6).map(item => (
                     <div key={item._id} className=" ">
                         <div className="mx-auto w-80 mb-5">
                             <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">

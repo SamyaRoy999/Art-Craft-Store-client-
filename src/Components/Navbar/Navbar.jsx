@@ -52,7 +52,7 @@ const Navbar = () => {
                 </div>
               </div>
               {/* dropdrown */}
-              <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52">
+              <ul tabIndex={0} className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-42">
                 <li><a>{user.displayName || name}</a></li>
                 <li><button onClick={() => userSignOut()}>LogOut</button></li>
               </ul>

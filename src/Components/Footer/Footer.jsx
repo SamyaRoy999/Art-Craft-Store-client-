@@ -1,16 +1,16 @@
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-r from-gray-100 via-[#e65b5686] to-gray-100">
+        <footer className="bg-gradient-to-r  from-gray-100 via-[#e65b5686] to-gray-100">
             <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-3  lg:text-left">
                     <div>
-                        <div className=" flex items-center gap-2">
+                        <div className=" flex justify-start items-center gap-2">
                             <div className=" w-12">
                                 <img src="https://i.ibb.co/hLhtdsV/nq31-07fy-230113.jpg" alt="" />
                             </div>
                             <a className=" font-bold text-3xl">Artful<span className="text-[#E65B56]">Nook</span></a>
                         </div>
-                        <p className="max-w-xs mt-4 text-sm text-gray-600">
+                        <p className="max-w-xs mt-4 text-sm  text-gray-600">
                             Welcome to <b>Artful<span className=" text-[#E65B56]">Nook</span> </b> , your premier destination for all things art and craft! Explore our wide range of products and unleash your creativity today.
                         </p>
                         <div className="flex mt-8 space-x-6 text-gray-600">
@@ -41,7 +41,7 @@ const Footer = () => {
                             {/* Instagram, Twitter, GitHub, and Dribbble icons */}
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid grid-cols-1 text-center lg:text-left gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
                         <div>
                             <p className="font-medium"> Company </p>
                             <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">

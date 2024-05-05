@@ -64,7 +64,7 @@ const Ratting = () => {
           {/* Content */}
           <div className="mx-auto max-w-2xl lg:max-w-4xl">
             {/* Logo */}
-            <img className="mx-auto h-12 grayscale" src="https://www.svgrepo.com/show/443576/brand-xmpp.svg" alt="Zilla Digital Logo" />
+            <img className="mx-auto h-12 grayscale" src="https://i.ibb.co/L9X8mGX/preview.jpg" alt="Zilla Digital Logo" />
             {/* Review */}
             <figure className="mt-10">
               <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
@@ -102,7 +102,7 @@ const Ratting = () => {
           {/* Content */}
           <div className="mx-auto max-w-2xl lg:max-w-4xl">
             {/* Logo */}
-            <img className="mx-auto h-12 grayscale" src="https://www.svgrepo.com/show/443576/brand-xmpp.svg" alt="Zilla Digital Logo" />
+            <img className="mx-auto h-12 grayscale" src="https://i.ibb.co/4P2MpJg/489.jpg" alt="Zilla Digital Logo" />
             {/* Review */}
             <figure className="mt-10">
               <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">

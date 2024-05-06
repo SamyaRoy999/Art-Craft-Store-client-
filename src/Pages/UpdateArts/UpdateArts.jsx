@@ -122,3 +122,4 @@ const UpdateArts = () => {
 }
 
 export default UpdateArts
+

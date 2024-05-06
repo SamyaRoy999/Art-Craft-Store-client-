@@ -3,9 +3,8 @@ import { useForm } from "react-hook-form"
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2'
-
-
-
+ 
+ 
 const AddCraft = () => {
     const {user} =  useContext(AuthContext);
    
@@ -92,7 +91,7 @@ const AddCraft = () => {
 
                             <select className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus" placeholder="subcategory_name"  {...register("subcategoryName", { required: true })} required>
                                 <option value="" disabled selected hidden>subcategory_name</option>
-                                <option value="ndscapePainting">Landscape Painting</option>
+                                <option value="LandscapePainting">Landscape Painting</option>
                                 <option value="PortraitDrawing">Portrait Drawing</option>
                                 <option value="WatercolourPainting">Watercolour Painting</option>
                                 <option value="OilPainting">Oil Painting</option>

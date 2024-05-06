@@ -52,7 +52,6 @@ const AddCraft = () => {
         }
 
         console.log(info);
-       
 
             fetch('http://localhost:5000/addArts', {
                 method: "POST",

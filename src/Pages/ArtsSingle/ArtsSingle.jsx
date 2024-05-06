@@ -69,7 +69,7 @@ const ArtsSingle = () => {
                                 </div>
                                 <p className="leading-relaxed pb-5">{item.shortDescription}</p>
 
-                                {/* <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.shortDescription}</p> */}
+                               
                                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800"> <span className=" text-xl font-bold">Customization </span>: {item.customization}</p>
                                 <p className="mb-2 ml-4 text-lg font-normal text-gray-800"><span className=" text-xl font-bold">ProcessingTime</span> : {item.processingTime}</p>  
                                 <p className="mb-6 ml-4 text-lg font-normal text-gray-800 pb-5"><span className=" text-xl font-bold">StockStatus</span> : {item.stockStatus}</p>

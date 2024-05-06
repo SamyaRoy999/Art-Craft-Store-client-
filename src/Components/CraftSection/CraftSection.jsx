@@ -27,13 +27,13 @@ const CraftSection = () => {
                 {arts.slice(0, 6).map(item => (
                     <div key={item._id} className=" ">
                         <div className="mx-auto w-80 mb-5">
-                            <div className="max-w-xs cursor-pointer rounded-lg bg-slate-200 p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+                            <div className="max-w-xs cursor-pointer rounded-lg  p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
                                 <div className=" ">
                                     <img className="w-full h-60 rounded-lg object-cover object-center" src={item.imageURL} alt="product" />
                                 </div>
                                 <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] ">{item.name}</p>
                                 <div className="flex justify-between items-center">
-                                    <p className="mb-4 ml-4 text-xl font-semibold text-gray-800">{item.price}</p>
+                                    <p className="mb-4 ml-4 text-xl font-semibold ">{item.price}</p>
                                     <Link to={`/artsSingle/${item._id}`}>
                                         <button type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">View Details</button>
                                     </Link>

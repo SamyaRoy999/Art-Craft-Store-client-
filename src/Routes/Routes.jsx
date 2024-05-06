@@ -10,6 +10,7 @@ import ArtsSingle from "../Pages/ArtsSingle/ArtsSingle";
 import AllArtsCraft from "../Pages/AllArtsCraft/AllArtsCraft";
 import UpdateArts from "../Pages/UpdateArts/UpdateArts";
 import PrivetedRoute from "../Priveted/PrivetedRoute";
+import AllSubCatagory from "../Pages/AllSubCatagory/AllSubCatagory";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
       {
         path: '/AllArtsCraft',
         element: <AllArtsCraft />
+      },
+      {
+        path: '/subcategory/:subcategoryName',
+        element: <AllSubCatagory />
       },
       {
         path: '/updateArts/:id',

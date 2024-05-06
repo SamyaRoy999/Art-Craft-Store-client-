@@ -9,8 +9,12 @@ import Swal from 'sweetalert2'
 const AddCraft = () => {
     const {user} =  useContext(AuthContext);
    
-    const authEmail = user?.email
-    console.log(authEmail);
+    const UserEmail= user?.email
+    const UserName = user?.displayName
+    
+    
+    
+
     const {
         register,
         handleSubmit,
@@ -21,8 +25,7 @@ const AddCraft = () => {
     const onSubmit = (data) => {
 
         const {
-            UserName,
-            UserEmail,
+          
             customization,
             imageURL,
             name,
@@ -45,9 +48,8 @@ const AddCraft = () => {
             stockStatus,
             shortDescription,
             subcategoryName,
-            UserName,
             UserEmail,
-            authEmail
+            UserName
         }
 
         console.log(info);
@@ -120,10 +122,7 @@ const AddCraft = () => {
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="rating" placeholder="rating" {...register("rating", { required: true })} required />
                         </div>
 
-                        <div className="mb-4 text-lg flex gap-4 flex-col lg:flex-row">
-                            <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="UserName" placeholder="User Name"   {...register("UserName", { required: true })} required />
-                            <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="email" name="UserEmail" placeholder="User Email"  {...register("UserEmail", { required: true })} required />
-                        </div>
+                       
                         <div className="mb-4 text-lg">
                             <input className="rounded-3xl w-full h-32 border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="shortDescription"  {...register("shortDescription", { required: true })} placeholder="short description" required />
                         </div>

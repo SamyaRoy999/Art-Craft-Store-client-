@@ -1,6 +1,7 @@
 import { IoBagAdd } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
@@ -52,7 +53,13 @@ const UpdateArts = () => {
         })
             .then(res => res.json())
             .then(data => {
-               console.log(data);
+               if(data.acknowledged){
+                Swal.fire({
+                    title: 'Craft item update successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+               }
             })
 
     }
@@ -63,13 +70,13 @@ const UpdateArts = () => {
                     <div className="mb-8 flex flex-col items-center">
                         <IoBagAdd className=" text-6xl" />
                         <h1 className="mb-2 text-2xl"> Update Craft Item </h1>
-                        <span className="text-gray-300">Enter Login Details</span>
+                       
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-4 text-lg flex gap-4">
                             <input  {...register("name", { required: true })} className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="name" defaultValue={loderdata.name} placeholder="item_name" required />
 
-                            <select value={loderdata.subcategoryName} className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus" placeholder="subcategory_name"   {...register("subcategoryName", { required: true })} required>
+                            <select defaultValue={loderdata.subcategoryName} className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus" placeholder="subcategory_name"   {...register("subcategoryName", { required: true })} required>
                                 <option disabled selected hidden>subcategory_name</option>
                                 <option value="ndscapePainting">Landscape Painting</option>
                                 <option value="PortraitDrawing">Portrait Drawing</option>
@@ -80,13 +87,13 @@ const UpdateArts = () => {
                             </select>
                         </div>
                         <div className="mb-4 text-lg flex gap-4">
-                            <select value={loderdata.stockStatus} className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus"  {...register("stockStatus", { required: true })} required>
+                            <select defaultValue={loderdata.stockStatus} className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus"  {...register("stockStatus", { required: true })} required>
                                 <option value="" disabled selected hidden>stockStatus</option>
                                 <option value="In stock">In stock</option>
                                 <option value="Made to Order">Made to Order</option>
                             </select>
 
-                            <select value={loderdata.customization} id="customization" className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" name="customization" placeholder="customization"  {...register("customization", { required: true })} required>
+                            <select defaultValue={loderdata.customization} id="customization" className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" name="customization" placeholder="customization"  {...register("customization", { required: true })} required>
                                 <option value="" disabled selected hidden>Customization</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>

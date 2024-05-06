@@ -6,9 +6,9 @@ import Ratting from "../../Components/Ratting/Ratting"
 
 const Home = () => {
     return (
-        <div className="  bg-[#FFF2E2]">
+        <div className="">
             <Banner />
-            <div className="bg-gray-100">
+            <div className="">
                 <CraftSection />
             </div>
             <NewExhibiztion />

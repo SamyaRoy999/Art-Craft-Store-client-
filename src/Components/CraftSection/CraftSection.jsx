@@ -27,7 +27,7 @@ const CraftSection = () => {
                 {arts.slice(0, 6).map(item => (
                     <div key={item._id} className=" ">
                         <div className="mx-auto w-80 mb-5">
-                            <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+                            <div className="max-w-xs cursor-pointer rounded-lg bg-slate-200 p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
                                 <div className=" ">
                                     <img className="w-full h-60 rounded-lg object-cover object-center" src={item.imageURL} alt="product" />
                                 </div>

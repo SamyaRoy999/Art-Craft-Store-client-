@@ -1,4 +1,5 @@
-
+import Lottie from 'lottie-react'
+import Love from "../../assets/love.json"
 
 const NewExhibiztion = () => {
     return (
@@ -24,6 +25,7 @@ const NewExhibiztion = () => {
                 </div>
             </div>
             <div className="  text-right flex-1 mx-5 lg:mx-0">
+                <Lottie className=' w-40' animationData={Love}/>
                 <h3 className="text-3xl lg:text-5xl text-[#E65B56] mb-6 font-normal font-EB_Garamond ">Artisanal Treasures: <br /> Handcrafted Delights Await</h3>
                 <p className=' font-normal mb-12 text-sm lg:text-base '> Explore a world of artisanal craftsmanship with our curated selection of handcrafted treasures. From intricately carved wooden sculptures to meticulously woven textiles, each piece tells a story of tradition, skill, and creativity.</p>
                 <a className="relative px-5 py-2 font-medium  text-white group">

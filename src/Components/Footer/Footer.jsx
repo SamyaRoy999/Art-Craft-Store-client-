@@ -1,3 +1,5 @@
+import Lottie from 'lottie-react'
+import phone from "../../assets/phone.json"
 const Footer = () => {
     return (
         <footer className="bg-gradient-to-r  from-gray-100 via-[#e65b5686] to-gray-100">
@@ -80,6 +82,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <p className="mt-8 text-lg text-gray-800 flex items-center">
+                    <Lottie className=' w-20' animationData={phone}/>  +880 1278432589
+                </p>
                 <p className="mt-8 text-xs text-gray-800">
                     © 2024 ArtfulNooke,samya
                 </p>

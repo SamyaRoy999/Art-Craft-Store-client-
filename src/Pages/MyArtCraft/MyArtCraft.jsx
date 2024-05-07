@@ -9,7 +9,7 @@ const MyArtCraft = () => {
   const { user } = useContext(AuthContext)
   const [myArt, setMyArt] = useState([])
   const [customizArts, setCustomizArts] = useState(myArt)
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
 
@@ -18,6 +18,7 @@ const MyArtCraft = () => {
       .then(data => {
         setCustomizArts(data)
         setMyArt(data);
+        setLoading(false);
       })
 
   }, [user])
@@ -72,32 +73,38 @@ const MyArtCraft = () => {
           <option value="no">No</option>
         </select>
       </form>
-      <div className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3">
-        {customizArts.map(item => (
-          <div key={item._id} className=" ">
-            <div className="mx-auto w-80 mb-5">
-              <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
-                <div className=" ">
-                  <img className="w-full h-60 rounded-lg object-cover object-center" src={item.imageURL} alt="product" />
-                </div>
-                <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.name}</p>
-                <p className="mb-2 ml-4 text-lg font-bold text-gray-800 "> {item.shortDescription}</p>
-                <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Price : {item.price}</p>
-                <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Rating : {item.rating}</p>
-                <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Customization : {item.customization}</p>
-                <p className="mb-2 ml-4 text-lg font-normal text-gray-800">ProcessingTime : {item.processingTime}</p>
-                <p className="mb-6 ml-4 text-lg font-normal text-gray-800">StockStatus : {item.stockStatus}</p>
-                <div className="flex justify-between items-center">
-                  <Link to={`/updateArts/${item._id}`}>
-                    <button type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Update</button>
-                  </Link>
-                  <button onClick={() => hendelDelete(item._id)} type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>
+      {loading ? (
+        <div className="flex justify-center items-center h-screen">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3">
+          {customizArts.map(item => (
+            <div key={item._id} className=" ">
+              <div className="mx-auto w-80 mb-5">
+                <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+                  <div className=" ">
+                    <img className="w-full h-60 rounded-lg object-cover object-center" src={item.imageURL} alt="product" />
+                  </div>
+                  <p className="my-4 pl-4 font-bold font-Shanti text-xl text-[#E65B56] "> {item.name}</p>
+                  <p className="mb-2 ml-4 text-lg font-bold text-gray-800 "> {item.shortDescription}</p>
+                  <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Price : {item.price}</p>
+                  <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Rating : {item.rating}</p>
+                  <p className="mb-2 ml-4 text-lg font-normal text-gray-800">Customization : {item.customization}</p>
+                  <p className="mb-2 ml-4 text-lg font-normal text-gray-800">ProcessingTime : {item.processingTime}</p>
+                  <p className="mb-6 ml-4 text-lg font-normal text-gray-800">StockStatus : {item.stockStatus}</p>
+                  <div className="flex justify-between items-center">
+                    <Link to={`/updateArts/${item._id}`}>
+                      <button type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Update</button>
+                    </Link>
+                    <button onClick={() => hendelDelete(item._id)} type="button" className="text-[#E65B56] font-semibold font-EB_Garamond text-base bg-white border border-[#E65B56] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100  rounded-full  px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Delete</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

@@ -7,7 +7,6 @@ import Love from "../../assets/love.json"
 const ArtsSingle = () => {
     const [arts, setArts] = useState([])
     const { id } = useParams()
-    // console.log(id);
 
     useEffect(() => {
 

@@ -18,6 +18,20 @@ Artisanal Creations is an online platform dedicated to the art of painting and d
 ## Live Website
 [ArtfulNook Website](#)
 
+## Package Installation
+### Client Side
+```bash
+ -D tailwindcss postcss autoprefixer
+ -D daisyui@latest
+ react-router-dom localforage match-sorter sort-by
+ swiper
+ react-hook-form
+ react-toastify
+ firebase
+ prop-types
+ sweetalert2
+ react-simple-typewriter
+ lottie-react
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

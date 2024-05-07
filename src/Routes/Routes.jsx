@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
       {
         path: '/updateArts/:id',
         element: <UpdateArts />,
-        loader: ({ params }) => fetch(`http://localhost:5000/addArts/singel/${params.id}`)
+        loader: ({ params }) => fetch(`https://server-side-art.vercel.app/addArts/singel/${params.id}`)
       },
     ]
   },

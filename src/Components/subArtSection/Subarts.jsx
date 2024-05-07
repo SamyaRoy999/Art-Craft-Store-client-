@@ -6,7 +6,7 @@ const Subarts = () => {
     const [subArt, setSubArt] = useState([])
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/subcategoryArt')
+        fetch('https://server-side-art.vercel.app/subcategoryArt')
             .then(res => res.json())
             .then(data => {
                 setSubArt(data);

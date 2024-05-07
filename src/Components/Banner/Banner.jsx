@@ -8,9 +8,9 @@ import { useTypewriter } from 'react-simple-typewriter'
 
 const Banner = () => {
     const [text] = useTypewriter({
-        words: ['Explore Majestic Landscapes','Creative Corner Emporium',' Gallery of Inspiration'],
+        words: ['Explore Majestic Landscapes', 'Creative Corner Emporium', ' Gallery of Inspiration'],
         loop: 0
-      })
+    })
     return (
         <>
             <Swiper

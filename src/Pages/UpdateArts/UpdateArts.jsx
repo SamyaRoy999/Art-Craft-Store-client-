@@ -46,7 +46,7 @@ const UpdateArts = () => {
         }
 
         console.log(info);
-        fetch(`http://localhost:5000/addArts/${loderdata._id}`,{
+        fetch(`https://server-side-art.vercel.app/addArts/${loderdata._id}`,{
             method: 'PUT',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(info)

@@ -7,7 +7,7 @@ const AllArtsCraft = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/addArts')
+        fetch('https://server-side-art.vercel.app/addArts')
             .then(res => res.json())
             .then(data => {
                 setArts(data);

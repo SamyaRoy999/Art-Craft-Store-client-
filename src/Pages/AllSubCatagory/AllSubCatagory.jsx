@@ -8,7 +8,7 @@ const AllSubCatagory = () => {
     const { subcategoryName } = useParams()
 
     useEffect(() => {
-        fetch('http://localhost:5000/addArts')
+        fetch('https://server-side-art.vercel.app/addArts')
             .then(res => res.json())
             .then(data => {
                 const filter = data.filter(item => item.subcategoryName === subcategoryName)

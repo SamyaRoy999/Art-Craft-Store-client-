@@ -13,7 +13,7 @@ const MyArtCraft = () => {
 
   useEffect(() => {
 
-    fetch(`http://localhost:5000/addArts/${user.email}`)
+    fetch(`https://server-side-art.vercel.app/addArts/${user.email}`)
       .then(res => res.json())
       .then(data => {
         setCustomizArts(data)
@@ -43,7 +43,7 @@ const MyArtCraft = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/addArts/${id}`, {
+        fetch(`https://server-side-art.vercel.app/addArts/${id}`, {
           method: "DELETE"
         })
           .then(res => res.json())

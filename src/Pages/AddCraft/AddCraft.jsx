@@ -10,10 +10,6 @@ const AddCraft = () => {
    
     const UserEmail= user?.email
     const UserName = user?.displayName
-    
-    
-    
-
     const {
         register,
         handleSubmit,
@@ -53,7 +49,7 @@ const AddCraft = () => {
 
         console.log(info);
 
-            fetch('http://localhost:5000/addArts', {
+            fetch('https://server-side-art.vercel.app/addArts', {
                 method: "POST",
                 headers: { "content-type": "application/json" },
                 body: JSON.stringify(info)

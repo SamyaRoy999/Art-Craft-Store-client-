@@ -78,7 +78,7 @@ const AddCraft = () => {
                     <div className="mb-8 flex flex-col items-center">
                         <IoBagAdd className=" text-6xl" />
                         <h1 className="mb-2 text-2xl"> Add Craft Item </h1>
-                        <span className="text-gray-300">Enter Login Details</span>
+                        <span className="text-gray-300">Enter Add Craft Details</span>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-4 text-lg flex flex-col lg:flex-row gap-4">

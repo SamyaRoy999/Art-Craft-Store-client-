@@ -73,7 +73,7 @@ const UpdateArts = () => {
                        
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex flex-col lg:flex-row  gap-4">
                             <input  {...register("name", { required: true })} className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="name" defaultValue={loderdata.name} placeholder="item_name" required />
 
                             <select defaultValue={loderdata.subcategoryName} className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus" placeholder="subcategory_name"   {...register("subcategoryName", { required: true })} required>
@@ -86,7 +86,7 @@ const UpdateArts = () => {
                                 <option value="CartoonDrawing">Cartoon Drawing</option>
                             </select>
                         </div>
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex gap-4 flex-col lg:flex-row">
                             <select defaultValue={loderdata.stockStatus} className=" w-full rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" id="stockStatus" name="stockStatus"  {...register("stockStatus", { required: true })} required>
                                 <option value="" disabled selected hidden>stockStatus</option>
                                 <option value="In stock">In stock</option>
@@ -99,11 +99,11 @@ const UpdateArts = () => {
                                 <option value="no">No</option>
                             </select>
                         </div>
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex gap-4 flex-col lg:flex-row">
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="processingTime" placeholder="processing_time" defaultValue={loderdata.processingTime}  {...register("processingTime", { required: true })} required />
                             <input className="rounded-3xl  border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="imageURL" placeholder="image_URL" defaultValue={loderdata.imageURL}  {...register("imageURL", { required: true })} required />
                         </div>
-                        <div className="mb-4 text-lg flex gap-4">
+                        <div className="mb-4 text-lg flex gap-4 flex-col lg:flex-row">
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="price" placeholder="price" defaultValue={loderdata.price} {...register("price", { required: true })} required />
                             <input className="rounded-3xl border-none bg-[#E65B56] bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="rating" placeholder="rating" defaultValue={loderdata.rating} {...register("rating", { required: true })} required />
                         </div>

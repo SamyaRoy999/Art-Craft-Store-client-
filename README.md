@@ -26,6 +26,18 @@ Artisanal Creations is an online platform dedicated to the art of painting and d
 ## Live Website
 [Artisanal Creations Website](https://arts-auth.web.app/)
 
+## Installation and Setup
+To clone and run this project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/SamyaRoy999/Art-Craft-Store-client-.git
+
+2. **Navigate to the project directory:**
+   cd my-project
+
+3. **Install dependencies  :**
+    npm install
 ## Package Installation
 ### Client Side
 ```bash
@@ -40,20 +52,6 @@ npm install prop-types
 npm install sweetalert2
 npm install react-simple-typewriter
 npm install lottie-react
-
-
-## Installation and Setup
-To clone and run this project locally, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/SamyaRoy999/Art-Craft-Store-client-.git
-
-2. **Navigate to the project directory:**
-   cd my-project
-
-3. **Install dependencies  :**
-    npm install
 
 4. **Set Environment Variables**: Create a .env file in the root directory. Add the necessary environment variables (e.g., database URI, API keys).
 
